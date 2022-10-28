@@ -3,6 +3,6 @@ node{
           checkout scm
       }
       stage('SSH') {
-        sh "ansible-playbook -i inventaire playbook.yml -u root -k"
+        sh "ansible-playbook -i inventaire playbook.yml -k"
       }
 }
