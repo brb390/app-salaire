@@ -35,3 +35,11 @@
    name: httpd
    state: started
    enabled: yes
+
+
+- name: Copier les fichiers php
+  copy:
+   src: aap-php/
+   dest: /var/www/{{ item }}/html/
+  loop:
+   "{{ sites }}"
