@@ -1,0 +1,6 @@
+- hosts: 10.0.0.58
+  
+  roles:
+    - roles/apache
+    - roles/mariadb
+    - roles/php 
