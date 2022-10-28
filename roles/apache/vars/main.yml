@@ -1,2 +1,5 @@
 ---
 # vars file for apache
+
+sites:
+ - app-salaire.rachdi-bilal.form

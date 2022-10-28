@@ -12,6 +12,24 @@
    state: stopped
    enabled: no
 
+- name: Création de répertoire sites
+  file: 
+   path: /var/www/{{ item }}
+   state: directory
+   mode: '0755'
+   owner: root
+   group: root
+   recurse: yes
+  loop:
+   "{{ sites }}"
+
+- name: Création du template de fichier de conf
+  template:
+   src: config.J2
+   dest: /etc/httpd/conf.d/{{ item }}.conf
+  loop:
+   "{{ sites }}"
+
 - name: Démarrage et activation du serveur apache
   systemd:
    name: httpd

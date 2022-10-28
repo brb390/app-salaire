@@ -1,2 +1,8 @@
 ---
 # handlers file for apache
+
+- name: "restarthttpd"
+  systemd:
+   name: httpd
+   state: restarted
+   enabled: yes
